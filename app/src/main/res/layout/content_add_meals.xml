@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddMeals"
+    tools:showIn="@layout/activity_add_meals">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardImage"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="220dp"
+            android:layout_height="220dp">
+
+            <ImageView
+                android:id="@+id/ivImage"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/ivCamera"
+            app:srcCompat="@drawable/ic_camera"
+            android:onClick="getImageFromCamera"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cardImage"
+            app:layout_constraintLeft_toLeftOf="@id/cardImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/cardImage"
+            app:layout_constraintTop_toTopOf="@id/ivCamera"
+            app:layout_constraintBottom_toBottomOf="@id/ivCamera"
+            app:layout_constraintRight_toRightOf="@id/cardImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp" />
+
+        <ImageView
+            android:id="@+id/ivGallery"
+            app:srcCompat="@drawable/ic_gallery"
+            android:onClick="getImageFromStorage"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/cardImage"
+            app:layout_constraintRight_toRightOf="@id/cardImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+
+
+        <TextView
+            android:id="@+id/tvAvailable"
+            android:text="Available in stock"
+            android:textSize="12sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/ivCamera"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:id="@+id/switchAvailable"
+            android:onClick="onSwitchClick"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toTopOf="@id/tvAvailable"
+            app:layout_constraintLeft_toRightOf="@id/tvAvailable"
+            app:layout_constraintBottom_toBottomOf="@id/tvAvailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toTopOf="@id/switchAvailable"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/tvIsHomeDelivery"
+            android:text="Home Delivery"
+            android:textSize="12sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvAvailable"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:id="@+id/switchHomeDelivery"
+            android:onClick="onSwitchClick"
+            app:layout_constraintTop_toTopOf="@id/tvIsHomeDelivery"
+            app:layout_constraintLeft_toLeftOf="@id/switchAvailable"
+            app:layout_constraintBottom_toBottomOf="@id/tvIsHomeDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+
+        <View
+            android:id="@+id/center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="1px"
+            android:layout_height="1px" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardName"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/tvIsHomeDelivery"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Name"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etName"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etName"
+                    style="@style/detailEditText"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardSize"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Size"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etSize"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etSize"
+                    style="@style/detailEditText"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardPrice"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="4dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardSize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Price"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etPrice"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etPrice"
+                    style="@style/detailEditText"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardDiscount"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="24dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardSize"
+            app:layout_constraintLeft_toRightOf="@id/center"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Discount in %"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etDiscount"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etDiscount"
+                    android:text="0"
+                    style="@style/detailEditText"
+                    android:inputType="number"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardTakeawayCharge"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="4dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardPrice"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Takeaway charge"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etTakeawayCharge"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etTakeawayCharge"
+                    style="@style/detailEditText"
+                    android:text="0"
+                    android:inputType="numberDecimal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardLimit"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="24dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardDiscount"
+            app:layout_constraintLeft_toRightOf="@id/center"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Limit per cus"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etLimit"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etLimit"
+                    android:text="0"
+                    style="@style/detailEditText"
+                    android:inputType="number"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardDesc"
+            app:cardCornerRadius="5dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:cardElevation="1px"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/cardLimit"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Description"
+                    style="@style/hints"
+                    app:layout_constraintBottom_toTopOf="@id/etDescription"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etDescription"
+                    style="@style/detailEditText"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <View
+            android:id="@+id/bottom"
+            app:layout_constraintTop_toBottomOf="@id/cardDesc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="1px"
+            android:layout_height="72dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

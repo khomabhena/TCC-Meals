@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TCC Meals</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_add_meals">Add meals</string>
+    <string name="title_activity_add_categories">Add categories</string>
+    <string name="title_activity_cart">Cart</string>
+    <string name="title_activity_delivery_area">Delivery/Pickup area</string>
+    <string name="title_activity_order_type">Order type</string>
+    <string name="title_activity_delivery_time">Delivery/Pickup time</string>
+    <string name="title_activity_finalize_order">Finalize order</string>
+    <string name="title_activity_add_delivery_area">AddDeliveryArea</string>
+</resources>

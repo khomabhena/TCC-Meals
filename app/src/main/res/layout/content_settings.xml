@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".Settings"
+    tools:showIn="@layout/activity_settings">
+
+
+    <ImageView
+        android:id="@+id/ivMeals"
+        app:srcCompat="@drawable/ic_add_meal"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@+id/tvMeals"
+        app:layout_constraintBottom_toBottomOf="@+id/tvMeals"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/tvMeals"
+        android:onClick="launchActivity"
+        android:text="Add meals"
+        android:textSize="18sp"
+        android:textColor="#393939"
+        android:paddingStart="70dp"
+        android:paddingEnd="30dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="70dp" />
+
+    <View
+        android:id="@+id/viewMeals"
+        android:layout_marginStart="70dp"
+        android:background="@color/line_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tvMeals"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="1px" />
+
+
+
+
+    <ImageView
+        android:id="@+id/ivAddDelivery"
+        app:srcCompat="@drawable/ic_delivery"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@+id/tvAddDelivery"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddDelivery"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/tvAddDelivery"
+        android:onClick="launchActivity"
+        android:text="Add delivery area"
+        android:textSize="18sp"
+        android:textColor="#393939"
+        android:paddingStart="70dp"
+        android:paddingEnd="30dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/viewMeals"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="70dp" />
+
+    <View
+        android:id="@+id/viewAddDelivery"
+        android:layout_marginStart="70dp"
+        android:background="@color/line_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddDelivery"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="1px" />
+
+
+
+
+    <ImageView
+        android:id="@+id/ivAddDeliveryTime"
+        app:srcCompat="@drawable/ic_delivery"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@+id/tvAddDeliveryTime"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddDeliveryTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/tvAddDeliveryTime"
+        android:onClick="launchActivity"
+        android:text="Add delivery time"
+        android:textSize="18sp"
+        android:textColor="#393939"
+        android:paddingStart="70dp"
+        android:paddingEnd="30dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/viewAddDelivery"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="70dp" />
+
+    <View
+        android:id="@+id/viewAddDeliveryTime"
+        android:layout_marginStart="70dp"
+        android:background="@color/line_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddDeliveryTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="1px" />
+
+
+
+
+    <ImageView
+        android:id="@+id/ivAddCategories"
+        app:srcCompat="@drawable/ic_delivery"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toTopOf="@+id/tvAddCategories"
+        app:layout_constraintBottom_toBottomOf="@+id/tvAddCategories"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:id="@+id/tvAddCategories"
+        android:onClick="launchActivity"
+        android:text="Add categories"
+        android:textSize="18sp"
+        android:textColor="#393939"
+        android:paddingStart="70dp"
+        android:paddingEnd="30dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@+id/viewAddDeliveryTime"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="70dp" />
+
+    <View
+        android:id="@+id/viewAddCategories"
+        android:layout_marginStart="70dp"
+        android:background="@color/line_divider"
+        app:layout_constraintTop_toBottomOf="@+id/tvAddCategories"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="1px" />
+
+</android.support.constraint.ConstraintLayout>

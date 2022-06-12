@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "539710844610",
+    "firebase_url": "https://tccfoodorders.firebaseio.com",
+    "project_id": "tccfoodorders",
+    "storage_bucket": "tccfoodorders.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539710844610:android:ec92eac9a65d45a2",
+        "android_client_info": {
+          "package_name": "com.kmab.tcc.food.orders"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "539710844610-3567sb5ngrgar9c5lko59kcnvg4j1jus.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBETyFuGpDSQacoHyrRu7J8KuQns6hHpRE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
